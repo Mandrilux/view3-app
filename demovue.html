@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+    <title> The checklist </title>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1> the checklist </h1>
+        <input type="text" v-model="message" />
+        <a href="#" @click="ajouterNote" v-if=" message != '' "> Ajouter note</a>
+        <p v-bind:title="titre" v-for="todo in todos" v-on:click="inverser">
+            {{todo}}
+        </p>
+
+    </div>
+
+    <div id="app2">
+        <p>
+            {{jean}}
+        </p>
+
+    </div>
+
+<script>
+    const vm = Vue.createApp({
+        data(){
+            return {
+                message: 'Hello word !',
+                titre: 'je suis un titre',
+                /*todos: [
+                    {id : 0, content: 'tache #1'},
+                    {id : 1, content: 'tache #2'}
+                ]*/
+
+                todos: [
+                    "Sauver le monde", "apprendre vue JS"
+
+                ]
+            }
+        },
+        methods:{
+            inverser(){
+                this.todos.reverse();
+            },
+            ajouterNote(){
+                this.todos.push(this.message);
+                console.log(this.todos)
+                this.message =""
+            }
+        }
+    }).mount('#app')
+
+    const vm2 = Vue.createApp({
+        data(){
+            return {
+                jean: 'Hello word !'            }
+        }
+    }).mount('#app2')
+
+
+</script>
+</body>
+</html>
