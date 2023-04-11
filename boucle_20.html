@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Une page HTML vierge</title>
+    <style>
+        .box{
+            width: 250px;
+            height: 250px;
+            border:1px solid #333;
+        }
+        .red{
+            background: crimson;
+        }
+
+        .bordure {
+            border:10px solid #333;
+        }
+    </style>
+
+    <meta charset="utf-8" />
+</head>
+
+<body>
+<div id="app">
+
+    <h1>Cours JS</h1>
+    <button v-on:click="toogleBox =! toogleBox"> Toogle la couleur</button>
+
+    <ul>
+        <li
+    </ul>
+
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+<script>
+
+    new Vue({
+        el: '#app',
+        data: {
+            tableau: [1,2,3,4],
+            toogleBox: false,
+        },
+        watch: {
+            toogleBox: function(){
+                console.log("on change la valeur");
+
+            }
+        },
+
+    })
+</script>
+</body>
+</html>

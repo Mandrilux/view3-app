@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Une page HTML vierge</title>
+    <style>
+        .box{
+            width: 250px;
+            height: 250px;
+            border:1px solid #333;
+        }
+        .red{
+            background: crimson;
+        }
+
+        .bordure {
+            border:10px solid #333;
+        }
+    </style>
+
+    <meta charset="utf-8" />
+</head>
+
+<body>
+<div id="app">
+
+    <h1>Cours JS</h1>
+    <button v-on:click="toogleBox =! toogleBox"> Toogle la couleur</button>
+
+    <template v-if="toogleBox">
+        <p> orem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus tristique elit eget luctus. Ut id felis sit amet ex dapibus varius. Pellentesque fringilla, mauris porttitor tempor maximus, enim magna malesuada urna, vel cursus neque sem et arcu. In id dignissim sem. Curabitur ut luctus ante, nec gravida velit. Proin a maximus arcu. Aliquam tincidunt, nisl sit amet congue porttitor, libero mauris suscipit mi, in pharetra tellus purus eget tortor. Proin odio tortor, hendrerit ac augue tincidunt, blandit viverra diam. </p>
+        <p> orem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus tristique elit eget luctus. Ut id felis sit amet ex dapibus varius. Pellentesque fringilla, mauris porttitor tempor maximus, enim magna malesuada urna, vel cursus neque sem et arcu. In id dignissim sem. Curabitur ut luctus ante, nec gravida velit. Proin a maximus arcu. Aliquam tincidunt, nisl sit amet congue porttitor, libero mauris suscipit mi, in pharetra tellus purus eget tortor. Proin odio tortor, hendrerit ac augue tincidunt, blandit viverra diam. </p>
+        <p> orem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus tristique elit eget luctus. Ut id felis sit amet ex dapibus varius. Pellentesque fringilla, mauris porttitor tempor maximus, enim magna malesuada urna, vel cursus neque sem et arcu. In id dignissim sem. Curabitur ut luctus ante, nec gravida velit. Proin a maximus arcu. Aliquam tincidunt, nisl sit amet congue porttitor, libero mauris suscipit mi, in pharetra tellus purus eget tortor. Proin odio tortor, hendrerit ac augue tincidunt, blandit viverra diam. </p>
+        <p> orem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus tristique elit eget luctus. Ut id felis sit amet ex dapibus varius. Pellentesque fringilla, mauris porttitor tempor maximus, enim magna malesuada urna, vel cursus neque sem et arcu. In id dignissim sem. Curabitur ut luctus ante, nec gravida velit. Proin a maximus arcu. Aliquam tincidunt, nisl sit amet congue porttitor, libero mauris suscipit mi, in pharetra tellus purus eget tortor. Proin odio tortor, hendrerit ac augue tincidunt, blandit viverra diam. </p>
+
+    </template>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+<script>
+
+    new Vue({
+        el: '#app',
+        data: {
+            num: 1,
+            toogleBox: false,
+        },
+        watch: {
+            toogleBox: function(){
+                console.log("on change la valeur");
+                this.num++;
+
+            },
+            num: function(){
+                if (this.num > 3){
+                    console.log("reset number")
+                    this.num = 1
+                }
+            }
+        },
+
+    })
+</script>
+</body>
+</html>
